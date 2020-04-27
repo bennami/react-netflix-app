@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #041B40;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 -5px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  color: aliceblue;
+  margin: auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: flex-end;
+}
+
+.description {
+  font-size: small;
+  margin: auto;
+  height: 300px;
+}
+
+.description > a {
+  display: inline;
+}
+
+.card > h1 {
+  margin: auto;
+  padding: 30px;
+}
