@@ -1,25 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import fetchData from './DataCall'
-import Home from "../view/Home";
+import React, { useState, useEffect, useRef } from 'react';
+import fetchData from './DataCall';
 
 function Search(){
-    const [hasError, setErrors] = useState(false);
-    const [data, setData] = useState(null);
-    const [query, setQuery] = useState("")
+    const [info, setInfo] = useState(null);
+    const [query, setQuery] = useState("");
 
-    useEffect(() => {
+    const handleChange = (e) => {
+        setQuery(e.target.value);
+    }
+
+    const searchFilm = (e) => {
+        e.preventDefault();
         fetchData("search/movie", {
             query
-        });
-    }, [query]);
+        })
+            .then(data => {
+                setInfo(data.result)
+            });
+    }
 
-    if (data === null || !data.status) {
+    if (info === null || !info.status) {
         return null;
     }
 
+    console.log(info)
+
     return (
-        <div>
-            <Home movies={data.results}/>
+        <div className="searchBar">
+            <form onSubmit={searchFilm} method="GET">
+                <input type="text" name="query" placeholder="search..." onChange={handleChange}/>
+                <button>SEARCH</button>
+            </form>
         </div>
     );
 }

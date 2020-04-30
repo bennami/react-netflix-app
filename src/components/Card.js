@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useCollapse from 'react-collapsed';
 
 function Card (props) {
@@ -9,8 +9,8 @@ function Card (props) {
     return (
         <article className="column">
             <div className="card">
-                <h1>{props.title}</h1>
-                <img src={`https://image.tmdb.org/t/p/w200/${props.poster_path}`}/>
+                <h2>{props.title}</h2>
+                <img src={`https://image.tmdb.org/t/p/w200/${props.poster_path}`} alt="movie"/>
                 <div className="description">
                     <p {...getCollapseProps()}>{props.overview}
                     </p>

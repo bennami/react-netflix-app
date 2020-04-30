@@ -6,6 +6,13 @@ body {
   background-color: #041B40;
 }
 
+.home{
+  color: aliceblue;
+}
+
+.home > h1 {
+  padding: 10px 16px;
+}
 section {
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +24,6 @@ section {
 .column {
   float: left;
   width: 25%;
-  color: aliceblue;
   margin: auto;
   padding: 0 10px;
   display: flex;
@@ -30,13 +36,15 @@ section {
   font-size: small;
   margin: auto;
   height: 300px;
+  width: 75%;
 }
 
 .description > a {
   display: inline;
+  text-decoration: underline;
 }
 
-.card > h1 {
+.card > h2 {
   margin: auto;
   padding: 30px;
 }
